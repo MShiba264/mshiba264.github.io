@@ -1,0 +1,1111 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/honorar-rechner/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+#honorar-rechner-app {
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  --hr-primary-color: #007bff; /* Example: A modern blue */
+  --hr-primary-darker: #0056b3;
+  --hr-text-color: #343a40;
+  --hr-text-muted: #6c757d;
+  --hr-border-color: #dee2e6;
+  --hr-light-bg: #f8f9fa;
+  --hr-white: #ffffff;
+  --hr-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --hr-border-radius: 8px; /* Consistent rounded corners */
+  color: var(--hr-text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Modern font stack */
+}
+
+#honorar-rechner-app h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-size: 1.4em;
+  font-weight: normal;
+}
+
+#honorar-rechner-app h2:first-of-type {
+  margin-top: 0;
+}
+
+#honorar-rechner-form fieldset {
+  border: 1px solid #ccc;
+  padding: 15px 20px 20px 20px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#honorar-rechner-form legend {
+  font-weight: 600;
+  padding: 0 10px;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.hr-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px 25px;
+  margin-bottom: 15px;
+}
+
+#honorar-rechner-form fieldset > .hr-form-grid {
+  margin-top: 10px;
+}
+
+.hr-form-grid-options {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px 20px;
+}
+
+.hr-form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hr-form-group-select {
+  grid-column: 1/-1;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 500px) {
+  .hr-form-group-select {
+    grid-column: auto;
+  }
+}
+.hr-form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.hr-form-group input[type=text],
+.hr-form-group input[type=number],
+.hr-form-group textarea,
+.hr-form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.hr-form-group input:focus,
+.hr-form-group textarea:focus,
+.hr-form-group select:focus {
+  border-color: #0073aa;
+  outline: none;
+  box-shadow: 0 0 0 1px #0073aa;
+}
+
+.hr-form-group input[type=number] {
+  text-align: right;
+}
+
+.hr-form-group-radio {
+  padding: 5px 0;
+}
+
+.hr-radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.hr-radio-options label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 0;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+
+.hr-radio-options input[type=radio] {
+  margin: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.hr-submit-area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#hr-calculate-button {
+  padding: 12px 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #0073aa;
+  color: white;
+  border: 1px solid #006799;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#hr-calculate-button:hover:not(:disabled) {
+  background-color: #005a87;
+}
+
+#hr-calculate-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Basic Spinner */
+.hr-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #333;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Results Table Styling */
+#honorar-rechner-results {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+#hr-results-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+#hr-results-table-container th,
+#hr-results-table-container td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right;
+  vertical-align: top;
+}
+
+#hr-results-table-container th:first-child,
+#hr-results-table-container td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+#hr-results-table-container th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+#hr-results-table-container tfoot td {
+  font-weight: bold;
+  background-color: #e8e8e8;
+  color: #111;
+}
+
+#hr-results-summary {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: left;
+}
+
+#hr-results-summary h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+#hr-results-summary p {
+  margin: 8px 0;
+  font-size: 1.05em;
+}
+
+/* Styles for Detailed Result Sections */
+.hr-result-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding-bottom: 10px;
+}
+
+.hr-result-section h3 {
+  font-size: 1.3em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.hr-service-details {
+  margin-top: 15px;
+}
+
+.hr-static-info {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hr-static-info .hr-label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.hr-subheading {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.hr-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.hr-detail-row .hr-label {
+  font-weight: 500;
+  margin-right: 10px;
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+
+.hr-detail-row .hr-value {
+  text-align: right;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.hr-detail-row .hr-description {
+  font-size: 0.9em;
+  color: #666;
+  margin-left: 15px;
+  text-align: right;
+  flex-basis: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.hr-boxed-value {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  min-width: 80px;
+  display: inline-block;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+
+.hr-total-row {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.hr-total-row .hr-label,
+.hr-total-row .hr-total-value {
+  font-weight: bold;
+}
+
+.hr-total-row .hr-total-value {
+  background-color: #e8e8e8;
+}
+
+.hr-rhythm-row {
+  margin-top: 5px;
+  padding-top: 0;
+  font-size: 0.95em;
+}
+
+.hr-rhythm-row .hr-label {
+  font-weight: normal;
+}
+
+.hr-rhythm-row .hr-description {
+  flex-basis: auto;
+  margin-left: 10px;
+}
+
+/* Remove definition list styles if not used */
+#honorar-rechner-error {
+  background-color: #fbeaea;
+  border: 1px solid #f4cccc;
+  color: #cc0000;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Example CSS for Leistungsübersicht Subheaders */
+.hr-leistungsuebersicht-table .hr-table-section-header {
+  font-weight: bold; /* Make text bold */
+  text-align: left; /* Align text to the left */
+  padding-top: 1em; /* Add some space above the header */
+  padding-bottom: 0.5em; /* Add some space below the header */
+  /* Optional: Add a background color */
+  /* background-color: #f0f0f0; */
+  /* Optional: Add a top border */
+  /* border-top: 2px solid #ccc; */
+}
+
+/* Ensure the cell spans the full width */
+.hr-leistungsuebersicht-table .hr-table-section-header td {
+  /* Colspan is handled by HTML attribute, but ensure no other styles interfere */
+}
+
+/* General table styling (adjust as needed) */
+.hr-leistungsuebersicht-table {
+  width: 100%;
+  border-collapse: collapse; /* Optional: removes space between cells */
+  margin-top: 1.5em; /* Space between Honorarangebot and Leistungsübersicht */
+}
+
+.hr-leistungsuebersicht-table th,
+.hr-leistungsuebersicht-table td {
+  border: 1px solid #ddd; /* Example borders */
+  padding: 8px;
+  text-align: right; /* Right-align numeric data */
+}
+
+.hr-leistungsuebersicht-table th {
+  background-color: #f8f8f8; /* Light grey background for main header */
+  font-weight: bold;
+  text-align: center;
+}
+
+.hr-leistungsuebersicht-table td:first-child {
+  text-align: left; /* Left-align the service description */
+}
+
+/* Styling for the "Honorarangebot" Summary Table */
+.hr-summary-table-container h3 {
+  margin-bottom: 0.5em; /* Add space below the "Leistungen" heading */
+}
+
+.hr-summary-table {
+  width: 100%;
+  border-collapse: collapse; /* Clean borders */
+  margin-bottom: 1.5em; /* Space below the table */
+}
+
+.hr-summary-table th,
+.hr-summary-table td {
+  border: 1px solid #ddd; /* Light grey border for cells */
+  padding: 8px 12px; /* Padding inside cells (vertical horizontal) */
+  text-align: right; /* Right-align numbers by default */
+  vertical-align: middle; /* Align cell content vertically */
+}
+
+/* Header specific styles */
+.hr-summary-table thead th {
+  background-color: #f8f8f8; /* Light background for header */
+  font-weight: bold; /* Bold header text */
+  text-align: center; /* Center-align header text */
+}
+
+/* First column (Leistung category) styling */
+.hr-summary-table tbody td:first-child,
+.hr-summary-table tfoot td:first-child {
+  text-align: left; /* Left-align the service category names */
+  font-weight: bold; /* Make category names bold */
+}
+
+/* Footer (Total row) styling */
+.hr-summary-table tfoot .hr-summary-total-row td {
+  font-weight: bold; /* Bold total row text */
+  border-top: 2px solid #ccc; /* Thicker top border for separation */
+  background-color: #f8f8f8; /* Optional: Light background for total row */
+}
+
+/* --- Refined Print Styles --- */
+@media print {
+  /* ---- General Reset and Visibility ---- */
+  body * {
+    visibility: hidden !important; /* Hide everything outside the app */
+    background-color: #fff !important; /* Force white background */
+    color: #000 !important; /* Force black text */
+    box-shadow: none !important; /* Remove shadows */
+    text-shadow: none !important; /* Remove text shadows */
+  }
+  #honorar-rechner-app,
+  #honorar-rechner-app * {
+    visibility: visible !important; /* Make only the app and its children visible */
+  }
+  #honorar-rechner-app {
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1cm 1cm 1cm !important; /* Padding: Top, Right, Bottom, Left */
+    border: none !important;
+    font-size: 9pt !important; /* Smaller base font size for print */
+    line-height: 1.3 !important;
+    print-color-adjust: exact !important; /* Attempt to force colors/backgrounds */
+    -webkit-print-color-adjust: exact !important;
+  }
+  /* ---- Hide Non-Result Elements ---- */
+  #honorar-rechner-app #honorar-rechner-form,
+  #honorar-rechner-app #honorar-rechner-error,
+  #honorar-rechner-app .hr-spinner,
+  #honorar-rechner-app #hr-calculate-button,
+  #honorar-rechner-app .hr-summary-actions,
+  #honorar-rechner-app #hr-results-summary .hr-summary-actions {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  /* ---- Common Result Styling ---- */
+  h2,
+  h3,
+  h4 {
+    visibility: visible !important;
+    color: #000 !important;
+    background: none !important;
+    page-break-after: avoid !important; /* Avoid breaking page right after a heading */
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+  }
+  p {
+    visibility: visible !important;
+    color: #000 !important;
+    background: none !important;
+    widows: 3; /* Minimum lines at bottom of page */
+    orphans: 3; /* Minimum lines at top of new page */
+  }
+  .hr-logo {
+    max-width: 150px !important;
+    height: auto !important;
+    display: block !important;
+    margin-bottom: 1em !important;
+  }
+  a[href^="mailto:"]:after,
+  a[href^=http]:after {
+    content: "" !important; /* Don't show URLs after links */
+  }
+  .honorar-rechner-results {
+    margin: 0 !important;
+  }
+  /* ---- Table Styling ---- */
+  table.hr-summary-table,
+  table.hr-leistungsuebersicht-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 1.5em !important;
+    page-break-inside: auto !important; /* Allow tables to break across pages if needed */
+    border: 1px solid #ccc !important; /* Add overall table border */
+  }
+  table.hr-summary-table th,
+  table.hr-summary-table td,
+  table.hr-leistungsuebersicht-table th,
+  table.hr-leistungsuebersicht-table td {
+    border: 1px solid #ccc !important;
+    padding: 4px 6px !important;
+    vertical-align: top !important; /* Align text to top */
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  table.hr-summary-table thead th,
+  table.hr-leistungsuebersicht-table thead th {
+    font-weight: bold !important;
+    text-align: center !important;
+    background-color: #eee !important; /* Light grey background for header */
+  }
+  table.hr-summary-table tbody td:first-child,
+  table.hr-summary-table tfoot td:first-child,
+  table.hr-leistungsuebersicht-table tbody td:first-child {
+    text-align: left !important;
+    font-weight: bold !important; /* Keep category names bold */
+  }
+  table.hr-summary-table td,
+  table.hr-leistungsuebersicht-table td {
+    text-align: right !important; /* Right-align other cells */
+  }
+  table.hr-summary-table td:first-child,
+  table.hr-leistungsuebersicht-table td:first-child {
+    text-align: left !important; /* Except first column */
+  }
+  table.hr-summary-table tfoot .hr-summary-total-row td {
+    font-weight: bold !important;
+    border-top: 2px solid #aaa !important;
+    background-color: #eee !important;
+  }
+  table.hr-leistungsuebersicht-table .hr-table-section-header td {
+    font-weight: bold !important;
+    text-align: left !important;
+    background-color: #eee !important;
+    border-top: 2px solid #aaa !important; /* Add border above section headers */
+    border-bottom: 1px solid #aaa !important;
+  }
+  .hr-footnote {
+    font-size: 8pt !important;
+    font-style: italic !important;
+    margin-top: 0.5em !important;
+    page-break-before: avoid !important; /* Try keep footnote with table */
+  }
+  /* ---- Detailed Section Styling (for hr-print-full-results) ---- */
+  .hr-result-section {
+    page-break-inside: avoid !important; /* Try to keep sections from breaking */
+    margin-bottom: 1.5cm !important;
+    border: 1px solid #eee !important; /* Add faint border around sections */
+    padding: 0.5cm !important;
+  }
+  .hr-detail-row {
+    display: flex !important; /* Use flex for better control? */
+    justify-content: space-between !important;
+    padding: 1px 0 !important; /* Reduce padding */
+    border-bottom: 1px dotted #eee !important; /* Add subtle separator */
+  }
+  .hr-detail-row:last-child {
+    border-bottom: none !important;
+  }
+  .hr-label {
+    flex: 0 0 45% !important; /* Fixed width for label */
+    text-align: left !important;
+    font-weight: normal !important; /* Normal weight for labels */
+  }
+  .hr-value {
+    flex: 0 0 25% !important; /* Fixed width for value */
+    text-align: right !important;
+    font-weight: normal !important;
+  }
+  .hr-boxed-value {
+    border: 1px solid #ccc !important;
+    padding: 1px 4px !important;
+    display: inline-block !important;
+    min-width: 50px !important;
+    text-align: right !important;
+    background-color: #fff !important;
+  }
+  .hr-description {
+    flex: 0 0 25% !important; /* Fixed width for description */
+    text-align: left !important;
+    padding-left: 5px !important;
+    font-size: 8pt !important;
+    font-style: italic !important;
+    color: #555 !important;
+  }
+  .hr-total-row .hr-label,
+  .hr-total-row .hr-value {
+    font-weight: bold !important;
+  }
+  .hr-static-info .hr-value {
+    text-align: left !important; /* Left align static info values */
+    font-style: italic !important;
+  }
+  .hr-calculated-value .hr-value {
+    font-weight: bold !important;
+  }
+  /* ---- Print Mode Specific Visibility ---- */
+  /* Print Summary Only Mode: Hide detailed results container */
+  body #honorar-rechner-app.hr-print-summary-only #hr-results-table-container {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  /* Ensure summary is visible */
+  body #honorar-rechner-app.hr-print-summary-only #hr-results-summary {
+    display: block !important;
+    visibility: visible !important;
+  }
+  /* Print Full Results Mode: Hide nothing specific (defaults show both) */
+  body #honorar-rechner-app.hr-print-full-results #hr-results-table-container,
+  body #honorar-rechner-app.hr-print-full-results #hr-results-summary {
+    display: block !important;
+    visibility: visible !important;
+  }
+} /* End @media print */
+/* Basic Button Styling (Non-Print) */
+.hr-summary-actions {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #eee;
+  text-align: center; /* Or left/right */
+}
+
+.hr-action-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+
+.hr-action-button:hover {
+  background-color: #eee;
+}
+
+/* === Collapsible Section Styling === */
+.hr-collapsible {
+  border: 1px solid var(--hr-border-color);
+  margin-bottom: 1.5rem;
+  border-radius: var(--hr-border-radius);
+  background-color: var(--hr-white);
+  box-shadow: var(--hr-card-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease; /* Add transition to shadow */
+}
+
+.hr-collapsible:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Slightly larger shadow on hover */
+}
+
+.hr-collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: var(--hr-light-bg); /* Light background for header */
+  border: none;
+  border-bottom: 1px solid var(--hr-border-color);
+  cursor: pointer;
+  text-align: left;
+  font-size: inherit;
+  color: var(--hr-text-color);
+  transition: background-color 0.2s ease;
+}
+
+/* Remove bottom border when section is collapsed */
+.hr-collapsible.hr-is-collapsed .hr-collapsible-header {
+  border-bottom-color: transparent;
+}
+
+.hr-collapsible-header:hover,
+.hr-collapsible-header:focus {
+  background-color: #e9ecef;
+  outline: none;
+}
+
+.hr-collapsible-header h3 {
+  margin: 0;
+  font-size: 1.15em; /* Slightly smaller */
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hr-collapsible-icon {
+  width: 24px; /* Slightly larger icon */
+  height: 24px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smoother ease */
+  position: relative;
+  flex-shrink: 0; /* Prevent icon shrinking */
+  margin-left: 1rem;
+}
+
+.hr-collapsible-icon::before,
+.hr-collapsible-icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--hr-text-muted); /* Icon color */
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.2s ease;
+  border-radius: 1px;
+}
+
+.hr-collapsible-icon::before {
+  /* Horizontal line */
+  top: 50%;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  margin-top: -1px;
+}
+
+.hr-collapsible-icon::after {
+  /* Vertical line */
+  left: 50%;
+  top: 15%;
+  width: 2px;
+  height: 70%;
+  margin-left: -1px;
+}
+
+.hr-collapsible-header:hover .hr-collapsible-icon::before,
+.hr-collapsible-header:hover .hr-collapsible-icon::after {
+  background-color: var(--hr-primary-color); /* Change icon color on header hover */
+}
+
+/* State Changes for Icon */
+.hr-collapsible.hr-is-collapsed .hr-collapsible-icon::after {
+  transform: rotate(90deg);
+}
+
+.hr-collapsible.hr-is-collapsed .hr-collapsible-icon::before {
+  transform: rotate(0deg);
+}
+
+.hr-collapsible:not(.hr-is-collapsed) .hr-collapsible-icon::before {
+  transform: rotate(90deg);
+}
+
+.hr-collapsible:not(.hr-is-collapsed) .hr-collapsible-icon::after {
+  transform: rotate(180deg);
+}
+
+.hr-collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smoother transition, include padding */
+  padding: 0 1.5rem;
+  background-color: var(--hr-white);
+}
+
+.hr-collapsible:not(.hr-is-collapsed) .hr-collapsible-content {
+  max-height: 2000px; /* Adjust if needed */
+  padding: 1.5rem;
+  border-top: 1px solid var(--hr-border-color); /* Add separator line when open */
+}
+
+/* Inner details styling */
+.hr-service-details {
+  /* Add more spacing if needed */
+  line-height: 1.6;
+}
+
+.hr-detail-row {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f3f5; /* Very light separator */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.hr-detail-row:last-child {
+  border-bottom: none;
+}
+
+.hr-label {
+  font-weight: 500;
+  color: var(--hr-text-muted);
+  min-width: 200px; /* Align values better */
+  padding-right: 1rem;
+  flex-shrink: 0;
+}
+
+.hr-value {
+  font-weight: 500;
+}
+
+.hr-description {
+  font-size: 0.85em;
+  color: var(--hr-text-muted);
+  margin-left: 0.5rem;
+  font-style: italic;
+}
+
+.hr-boxed-value {
+  background-color: #f1f3f5;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 80px;
+  text-align: right;
+  font-family: monospace; /* Use monospace for numbers? Optional */
+  font-size: 0.95em;
+}
+
+.hr-total-row .hr-label {
+  font-weight: bold;
+  color: var(--hr-text-color);
+}
+
+.hr-total-value {
+  font-weight: bold;
+  background-color: #e9ecef;
+  font-size: 1.05em;
+}
+
+/* --- Summary Section (Card Styling) --- */
+.hr-summary-honorarangebot,
+.hr-summary-leistungsuebersicht {
+  background-color: var(--hr-white);
+  padding: 2rem; /* More padding */
+  border-radius: var(--hr-border-radius);
+  margin-bottom: 2rem;
+  box-shadow: var(--hr-card-shadow);
+  border: 1px solid var(--hr-border-color);
+}
+
+.hr-summary-header {
+  text-align: center;
+  border-bottom: 1px solid var(--hr-border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hr-summary-header .hr-logo {
+  max-width: 180px; /* Adjust logo size */
+  margin-bottom: 1rem;
+}
+
+.hr-summary-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.hr-summary-header p {
+  color: var(--hr-text-muted);
+  margin: 0;
+}
+
+/* Client Info / Proposal / Assumptions (Sub-Cards) */
+.hr-summary-client-info,
+.hr-summary-proposal,
+.hr-summary-assumptions {
+  background-color: var(--hr-light-bg);
+  padding: 1.5rem;
+  border-radius: var(--hr-border-radius);
+  margin-top: 1.5rem; /* Space them out */
+  border: 1px solid #e9ecef; /* Lighter border */
+}
+
+.hr-summary-client-info .hr-info-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.hr-summary-client-info .hr-info-value {
+  margin-bottom: 0.25rem;
+}
+
+.hr-summary-proposal .hr-proposal-row {
+  /* Keep as is */
+}
+
+.hr-summary-assumptions h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+}
+
+.hr-summary-assumptions p {
+  margin: 0.3rem 0;
+}
+
+/* --- Table Styling --- */
+.hr-summary-table-container h3,
+.hr-summary-leistungsuebersicht h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hr-summary-table,
+.hr-leistungsuebersicht-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.95em;
+  /* Remove shadow from table if parent card has it */
+}
+
+.hr-summary-table th,
+.hr-leistungsuebersicht-table th,
+.hr-summary-table td,
+.hr-leistungsuebersicht-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--hr-border-color);
+  vertical-align: middle;
+}
+
+/* Right align numeric columns */
+.hr-summary-table th:not(:first-child),
+.hr-summary-table td:not(:first-child),
+.hr-leistungsuebersicht-table th:nth-child(n+3),
+.hr-leistungsuebersicht-table td:nth-child(n+3) {
+  text-align: right;
+}
+
+/* Center 'gewählt' column */
+.hr-leistungsuebersicht-table th:nth-child(2),
+.hr-leistungsuebersicht-table td:nth-child(2) {
+  text-align: center;
+}
+
+.hr-summary-table thead th,
+.hr-leistungsuebersicht-table thead th {
+  background-color: var(--hr-light-bg);
+  font-weight: 600;
+  border-top: 1px solid var(--hr-border-color);
+  border-bottom: 2px solid var(--hr-border-color); /* Thicker line below header */
+  color: var(--hr-text-muted);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hr-leistungsuebersicht-table .hr-table-section-header td {
+  background-color: #e9ecef;
+  font-weight: 600;
+  text-align: left; /* Align left */
+  padding-left: 1rem;
+  border-top: 2px solid var(--hr-border-color);
+  color: var(--hr-text-color);
+}
+
+.hr-summary-table tfoot td {
+  font-weight: bold;
+  border-top: 2px solid var(--hr-border-color);
+  background-color: var(--hr-light-bg);
+}
+
+.hr-summary-table tfoot tr:hover td {
+  background-color: #e9ecef; /* Highlight footer on hover */
+}
+
+.hr-footnote {
+  font-size: 0.85em;
+  color: var(--hr-text-muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* --- Action Buttons --- */
+.hr-summary-actions {
+  text-align: center; /* Center buttons */
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hr-border-color);
+}
+
+.hr-action-button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--hr-primary-color); /* Use border */
+  border-radius: var(--hr-border-radius);
+  background-color: var(--hr-primary-color); /* Solid background */
+  color: var(--hr-white);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  margin: 0.5rem;
+  display: inline-block; /* Ensure inline-block */
+  text-decoration: none; /* For potential <a> tags styled as buttons */
+  line-height: 1.5;
+}
+
+.hr-action-button:hover,
+.hr-action-button:focus {
+  background-color: var(--hr-primary-darker);
+  border-color: var(--hr-primary-darker);
+  color: var(--hr-white);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px); /* Subtle lift */
+  outline: none;
+}
+
+.hr-action-button:active {
+  transform: translateY(0px); /* Press down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hr-action-button:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Optional: Secondary Button Style (e.g., for Print?) */
+#hr-print-button {
+  background-color: var(--hr-white);
+  color: var(--hr-primary-color);
+  border-color: var(--hr-primary-color);
+}
+
+#hr-print-button:hover,
+#hr-print-button:focus {
+  background-color: #f8f9fa; /* Light bg on hover */
+  color: var(--hr-primary-darker);
+  border-color: var(--hr-primary-darker);
+}
+
+/* Helper class to hide elements during PDF generation */
+.hr-hide-from-pdf {
+  display: none !important;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+  /* Adjust padding for smaller screens */
+  .hr-summary-honorarangebot,
+  .hr-summary-leistungsuebersicht {
+    padding: 1rem;
+  }
+  .hr-collapsible-header,
+  .hr-collapsible:not(.hr-is-collapsed) .hr-collapsible-content {
+    padding: 0.8rem 1rem;
+  }
+  /* Stack detailed view labels/values if needed */
+  .hr-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hr-label {
+    min-width: auto;
+    margin-bottom: 0.25rem;
+    font-size: 0.9em;
+  }
+  /* Adjust table text size maybe */
+  .hr-summary-table,
+  .hr-leistungsuebersicht-table {
+    font-size: 0.85em;
+  }
+  .hr-action-button {
+    padding: 0.6rem 1rem;
+    margin: 0.3rem;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
